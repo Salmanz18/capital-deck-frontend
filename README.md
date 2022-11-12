@@ -1,1 +1,1 @@
-#Capital Deck Fronted
+#Capital Deck Frontend
