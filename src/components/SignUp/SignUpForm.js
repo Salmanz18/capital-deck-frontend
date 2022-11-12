@@ -1,20 +1,33 @@
-import { Grid, Paper, TextField, Button } from '@mui/material';
 import React from 'react';
+import { Grid, Paper, TextField, Button } from '@mui/material';
+import '../../common_css/Form.css';
 
-function SignUp() {
+const SignUpForm = () => {
   const paperStyle = {
-    padding: '30px 20px',
-    width: 300,
-    margin: '150px auto'
+    padding: '25px 30px 40px',
+    width: '300px',
+    margin: 'auto auto',
+    borderRadius: '8px',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%,-50%)'
   };
   const formStyle = {
-    marginTop: '10px'
+    margin: '15px 0px'
   };
+  const formBtnStyle = {
+    margin: '20px 0px 10px 0px',
+    backgroundColor: '#285AC5',
+    fontWeight: 'bold',
+    borderRadius: '8px'
+  };
+
   return (
-    <div>
+    <div className='form-container'>
       <Grid align='center'>
         <Paper elevation={20} style={paperStyle}>
-          Sign Up
+          <p className='form-label'>Sign Up</p>
           <form>
             <TextField
               style={formStyle}
@@ -24,7 +37,6 @@ function SignUp() {
               id='firstName'
               label='First Name'
               name='firstName'
-              autoComplete='fname'
             />
             <TextField
               style={formStyle}
@@ -34,7 +46,6 @@ function SignUp() {
               id='lastName'
               label='Last Name'
               name='lastName'
-              autoComplete='lname'
             />
             <TextField
               style={formStyle}
@@ -44,7 +55,6 @@ function SignUp() {
               id='email'
               label='Email Address'
               name='email'
-              autoComplete='email'
             />
             <TextField
               style={formStyle}
@@ -55,11 +65,25 @@ function SignUp() {
               label='Password'
               type='password'
               id='password'
-              autoComplete='current-password'
+            />
+            <TextField
+              style={formStyle}
+              variant='outlined'
+              required
+              fullWidth
+              name='cpassword'
+              label='Confirm Password'
+              type='password'
+              id='cpassword'
             />
           </form>
           <div>
-            <Button style={formStyle} type='submit' fullWidth variant='contained' color='primary'>
+            <Button
+              style={formBtnStyle}
+              type='submit'
+              fullWidth
+              variant='contained'
+              color='primary'>
               Sign Up
             </Button>
           </div>
@@ -67,6 +91,6 @@ function SignUp() {
       </Grid>
     </div>
   );
-}
+};
 
-export default SignUp;
+export default SignUpForm;
